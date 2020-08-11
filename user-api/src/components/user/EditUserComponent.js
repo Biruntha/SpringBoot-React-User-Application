@@ -20,15 +20,15 @@ class EditUserComponent extends Component {
             age: '',
             salary: '',
         }
-        this.saveUser = this.saveUser.bind(this);
-        this.loadUser = this.loadUser.bind(this);
+        // this.saveUser = this.saveUser.bind(this);
+        // this.loadUser = this.loadUser.bind(this);
     }
 
     componentDidMount() {
         this.loadUser();
     }
 
-    loadUser() {
+    loadUser = () => {
         ApiService.fetchUserById(window.localStorage.getItem("userId"))
             .then((res) => {
                 let user = res.data;

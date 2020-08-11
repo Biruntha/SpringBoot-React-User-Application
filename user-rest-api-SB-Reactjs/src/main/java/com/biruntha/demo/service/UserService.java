@@ -24,7 +24,7 @@ public class UserService {
 	
 	public ResponseEntity<User> createUser(User user) {
 		try {
-			Integer id = userRepositoryCustom.getMaxBookId() + 1;
+			Integer id = userRepositoryCustom.getMaxUserId() + 1;
 			User userNew = userDao.save(new User(id, user.getFirstName(), user.getLastName(), 
 					user.getUsername(), user.getPassword(), user.getSalary(), user.getAge()));
 		    return new ResponseEntity<>(userNew, HttpStatus.CREATED);
@@ -59,8 +59,6 @@ public class UserService {
 			User userOld = userData.get();
 			userOld.setFirstName(user.getFirstName());
 			userOld.setLastName(user.getLastName());
-			userOld.setUsername(user.getUsername());
-			userOld.setPassword(user.getPassword());
 			userOld.setSalary(user.getSalary());
 			userOld.setAge(user.getAge());
 		    return new ResponseEntity<>(userDao.save(userOld), HttpStatus.OK);

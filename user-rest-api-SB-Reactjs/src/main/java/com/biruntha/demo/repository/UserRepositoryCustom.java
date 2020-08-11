@@ -13,7 +13,7 @@ public class UserRepositoryCustom {
 	@Autowired
     MongoTemplate mongoTemplate;
  
-    public Integer getMaxBookId() {
+    public Integer getMaxUserId() {
 		Query query = new Query();
 		query.with(Sort.by(Sort.Direction.DESC, "id"));
 		query.limit(1);
