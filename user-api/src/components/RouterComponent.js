@@ -19,7 +19,7 @@ const AppRouter = () => {
                         <Route path="/" exact component={ListUserComponent} />
                         <Route path="/users" component={ListUserComponent} />
                         <Route path="/add-user" component={AddUserComponent} />
-                        <Route path="/edit-user" component={EditUserComponent} />
+                        <Route path="/edit-user/:id" component={EditUserComponent} />
                     </Switch>
                 </div>
             </Router>
